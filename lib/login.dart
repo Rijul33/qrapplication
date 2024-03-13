@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qrapplication/qdart.dart';
 import 'package:qrapplication/registration.dart';
+
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class _State extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.grey,
 
         body: Center(
           child: Column(
@@ -33,7 +35,7 @@ class _State extends State<MyApp> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)
                     ),
-                    labelText: 'email id'
+                    labelText: 'enter your username'
                 ),
 
                 ),
@@ -45,16 +47,29 @@ class _State extends State<MyApp> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)
                     ),
-                    labelText: 'password'
+                    labelText: 'enter your password'
                 ),
 
                 ),
               ),
               ElevatedButton(onPressed:(){
-                Navigator.push(context,MaterialPageRoute(builder: (context)=> RegApp() ) );
+                Navigator.push(context,MaterialPageRoute(builder: (context)=> Qr() ) );
               }, child: Text('LOGIN'),
-                style:TextButton.styleFrom(backgroundColor: Colors.blue) ,
-              )
+                style:TextButton.styleFrom(backgroundColor: Colors.blue) ,),
+                  SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+
+                children: [
+                  Text('Do you have an account?'),
+                  TextButton(onPressed:(){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=> RegApp() ) );
+                  }, child: Text('Registration'),
+                    style:TextButton.styleFrom(backgroundColor: Colors.grey) ,),
+                ],
+              ),
+
+
             ],
           ),
         ),

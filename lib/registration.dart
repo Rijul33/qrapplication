@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qrapplication/scan.dart';
+import 'package:qrapplication/qdart.dart';
 
 class RegApp extends StatefulWidget {
   const RegApp({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class _RegAppState extends State<RegApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.grey,
         body: Center(
           child: Column(
             children: [
@@ -33,7 +33,19 @@ class _RegAppState extends State<RegApp> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)
                     ),
-                    labelText: 'Enter your name'
+                    labelText: 'enter your name'
+                ),
+
+                ),
+              ),
+              Container(
+                width: 300,
+                height: 80,
+                child: TextField(decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20)
+                    ),
+                    labelText: 'enter your reg no'
                 ),
 
                 ),
@@ -62,20 +74,8 @@ class _RegAppState extends State<RegApp> {
 
                 ),
               ),
-              Container(
-                width: 300,
-                height: 80,
-                child: TextField(decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20)
-                    ),
-                    labelText: 'enter your password'
-                ),
-
-                ),
-              ),
               ElevatedButton(onPressed:(){
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>Qrpage() ) );
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>Qr() ) );
               }, child: Text('LOGIN'),
                 style:TextButton.styleFrom(backgroundColor: Colors.blue) ,
               )
