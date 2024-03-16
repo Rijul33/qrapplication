@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:qrapplication/camera.dart';
 class Qr extends StatefulWidget {
   const Qr({super.key});
 
@@ -22,6 +23,9 @@ class _QrState extends State<Qr> {
           ),
           SizedBox(height: 50,),
           TextButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Cam()
+              ,)
+            );
 
           }, child:
           Text('Scan',style: TextStyle(color: Colors.black),

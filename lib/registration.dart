@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qrapplication/qdart.dart';
+import 'package:qrapplication/developer.dart';
 
 class RegApp extends StatefulWidget {
   const RegApp({Key? key}) : super(key: key);
@@ -75,7 +76,7 @@ class _RegAppState extends State<RegApp> {
                 ),
               ),
               ElevatedButton(onPressed:(){
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>Qr() ) );
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>developer() ));
               }, child: Text('LOGIN'),
                 style:TextButton.styleFrom(backgroundColor: Colors.blue) ,
               )
