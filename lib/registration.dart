@@ -14,13 +14,13 @@ class RegApp extends StatefulWidget {
 
 class _RegAppState extends State<RegApp> {
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController regnoController = TextEditingController();
+  final TextEditingController rollnoController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   void RegApp()async{
     Uri uri=Uri.parse('https://scnner-web.onrender.com/api/register');
     print(nameController.text);
-    print(regnoController.text);
+    print(rollnoController.text);
     print(emailController.text);
     print(passwordController.text);
     var response=await http.post(uri,
@@ -29,7 +29,7 @@ class _RegAppState extends State<RegApp> {
     },
     body:jsonEncode({
       "name":nameController.text,
-      "regno":regnoController.text,
+      "f":rollnoController.text,
       "email":emailController.text,
       "password":passwordController.text,
     }));
@@ -44,6 +44,7 @@ class _RegAppState extends State<RegApp> {
 
     }
     }
+
 
 
   @override
@@ -84,11 +85,11 @@ class _RegAppState extends State<RegApp> {
                 width: 300,
                 height: 80,
                 child: TextField(
-                  controller: regnoController,
+                  controller: rollnoController,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20)),
-                      labelText: 'enter your reg no'),
+                      labelText: 'enter your roll no'),
                 ),
               ),
               Container(
